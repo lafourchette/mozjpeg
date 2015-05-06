@@ -1,0 +1,13 @@
+
+    /**
+     * method: compressImage
+     * case: success
+     */
+    public function testCompressImage()
+    {
+        $file = new \SplFileInfo(realpath(__DIR__.'/bonzai.jpg'));
+        $mozjpeg = new Mozjpeg();
+        $mozjpeg->compressImage($file, '/tmp/bonzai-moz.jpg');
+
+        $this->assertTrue( file_exists('/tmp/bonzai-moz.jpg') );
+    }
