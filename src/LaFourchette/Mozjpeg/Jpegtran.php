@@ -43,7 +43,7 @@ class Jpegtran
      *
      * @throws \InvalidArgumentException
      */
-    public function compressImage(\SplFileInfo $file, $newImagePath)
+    public function run(\SplFileInfo $file, $newImagePath)
     {
         $this->checkArguments($file, $newImagePath);
 

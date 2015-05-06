@@ -84,7 +84,7 @@ namespace LaFourchette\Tests\Mozjpeg {
             new Jpegtran('/foo/bar/test-is-executable');
         }
 
-        public function testCompressImageFileNotFound()
+        public function testRunFileNotFound()
         {
             $this->setExpectedException(
                 '\InvalidArgumentException',
@@ -97,10 +97,10 @@ namespace LaFourchette\Tests\Mozjpeg {
             $fileMock->isFile()->willReturn(false);
 
             $jpegtran = new Jpegtran('/foo/bar/jpegtran');
-            $jpegtran->compressImage($fileMock->reveal(), '');
+            $jpegtran->run($fileMock->reveal(), '');
         }
 
-        public function testCompressImageWrongExtension()
+        public function testRunWrongExtension()
         {
             $this->setExpectedException(
                 '\InvalidArgumentException',
@@ -114,10 +114,10 @@ namespace LaFourchette\Tests\Mozjpeg {
             $fileMock->isFile()->willReturn(true);
 
             $jpegtran = new Jpegtran('/foo/bar/jpegtran');
-            $jpegtran->compressImage($fileMock->reveal(), '');
+            $jpegtran->run($fileMock->reveal(), '');
         }
 
-        public function testCompressImageWrongNewPath()
+        public function testRunWrongNewPath()
         {
             $this->setExpectedException(
                 '\InvalidArgumentException',
@@ -130,7 +130,7 @@ namespace LaFourchette\Tests\Mozjpeg {
             $fileMock->isFile()->willReturn(true);
 
             $jpegtran = new Jpegtran('/foo/bar/jpegtran');
-            $jpegtran->compressImage($fileMock->reveal(), '/foo/baz/image.jpg');
+            $jpegtran->run($fileMock->reveal(), '/foo/baz/image.jpg');
         }
     }
 }
