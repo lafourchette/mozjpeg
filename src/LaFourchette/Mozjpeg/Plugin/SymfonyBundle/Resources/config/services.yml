@@ -1,0 +1,8 @@
+parameters:
+    la_fourchette_mozjpeg.jpegtran.class: LaFourchette\Mozjpeg\Jpegtran
+
+services:
+    la_fourchette_mozjpeg.jpegtran:
+        class: %la_fourchette_mozjpeg.jpegtran.class%
+        arguments:
+            - %la_fourchette_mozjpeg.jpegtran.bin%
