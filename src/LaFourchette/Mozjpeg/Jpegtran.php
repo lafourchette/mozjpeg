@@ -3,7 +3,7 @@
 namespace LaFourchette\Mozjpeg;
 
 /**
- * Class Mozjpeg
+ * Class Jpegtran
  * Micro-lib to wrap jpegtran command
  *
  * @package LaFourchette\Mozjpeg
